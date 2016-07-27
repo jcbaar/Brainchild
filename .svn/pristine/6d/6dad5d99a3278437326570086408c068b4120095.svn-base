@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Printer Page</title>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</head>
+	<body>
+		<p><IMG alt="" src="Printer.jpg"></p>
+		<p>This is the Printing page of the Brainchild configuration program. With it you can 
+			change the way the text is printed, wether or not header and/or footer strings 
+			are printed and if syntax coloring is to be used. The various settings are 
+			explaned below:</p>
+		<table border="1" width="100%" cellspacing="0" cellPadding="2">
+			<tr>
+				<td width="35%">Print header</td>
+				<td width="65%">When this option is checked Brainchild will print a header line at the 
+					start of each page.&nbsp; Under this option you see three edit controls. The 
+					contents of the left edit control is printed left-aligned, the contents of the 
+					middle edit control is printed centered and the contents of the right edit 
+					control is printed right-aligned. See the <a href="#formats">Header and Footer format 
+						elements</a> section for information on the possible format elements.</td>
+			</tr>
+			<tr>
+				<td width="35%">Print footer</td>
+				<td width="65%">When this option is checked Brainchild will print a footer line at the 
+					end of each page.&nbsp; Under this option you see three edit controls. The 
+					contents of the left edit control is printed left-aligned, the contents of the 
+					middle edit control is printed centered and the contents of the right edit 
+					control is printed right-aligned. See the <a href="#formats">Header and Footer format 
+						elements</a> section for information on the possible format elements.</td>
+			</tr>
+			<tr>
+				<td width="35%">Use syntax coloring when printing</td>
+				<td width="65%">When this option is turned on and you have a color printer Brainchild 
+					will use syntax coloring during the printing of the file. Note that the 
+					background color for the default text, I.E. text which does not have it's own 
+					background color defined, will not be printed.</td>
+			</tr>
+			<TR>
+				<TD width="35%">Print line numbers</TD>
+				<TD width="65%">When this option is turned on the line numbers will also be printed.</TD>
+			</TR>
+			<TR>
+				<TD width="35%">Use screen font for printing</TD>
+				<TD width="65%">When this option is turned on the control will use the font used to 
+					display the file on screen for it's printer output aswell.</TD>
+			</TR>
+			<tr>
+				<td width="35%">Use selected font for printing</td>
+				<td width="65%">When this option is selected the control will use the font you can 
+					select using the <b>Select...</b> button.</td>
+			</tr>
+			<tr>
+				<td width="35%">
+					Select...</td>
+				<td width="65%">Click on this button to change the type-face and font size used to 
+					print the file. This option is only available when you have selected the 
+					"Selected printer font" option. You can only select fixed width fonts.</td>
+			</tr>
+		</table>
+		<p><a name="formats"></a><font size="5"><b><a name="formats">Header and Footer format elements</a></b></font></p>
+		<p>The header and footer strings can contain any of the following format elements:</p>
+		<p>
+			<table border="1" cellpadding="2" width="100%" cellspacing="1">
+				<tr>
+					<td width="10%" bgcolor="#e4e4e4"><b>Element</b></td>
+					<td width="90%" bgcolor="#e4e4e4"><b>Meaning</b></td>
+				</tr>
+				<tr>
+					<td width="10%">%%</td>
+					<td width="90%">Insert a % character in the output.</td>
+				</tr>
+				<tr>
+					<td width="10%">%f</td>
+					<td width="90%">The filename of the text without the path.</td>
+				</tr>
+				<tr>
+					<td width="10%">%F</td>
+					<td width="90%">The full path of the text.</td>
+				</tr>
+				<tr>
+					<td width="10%">%p</td>
+					<td width="90%">The page number currently being printed.</td>
+				</tr>
+				<tr>
+					<td width="10%">%P</td>
+					<td width="90%">The total number of pages to print.</td>
+				</tr>
+				<tr>
+					<td width="10%">%d</td>
+					<td width="90%">The date of printing. Formatted using the format string set of the <a href="date_page.htm">
+							Date &amp; Time</a> page.
+					</td>
+				</tr>
+				<tr>
+					<td width="10%">%d</td>
+					<td width="90%">The time of printing. Formatted using the format string set of the <a href="date_page.htm">
+							Date &amp; Time</a> page.
+					</td>
+				</tr>
+			</table>
+		<p>All other characters are printed exactly as they appear in the format string.</p>
+	</body>
+</html>

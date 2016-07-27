@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<body>
+		<P><FONT color="#000000" size="4"><STRONG>BCM_SETSELECTIONPOINTS</STRONG></FONT></P>
+		<TABLE id="Table1" cellSpacing="3" cellPadding="0" width="100%" border="0">
+			<TR>
+				<TD width="100%" bgColor="#e6e6e6"><PRE>BCM_SETSELECTIONPOINTS
+	wParam = 0;
+	lParam = ( LPARAM )( LPCRECT )pPositions;</PRE>
+				</TD>
+			</TR>
+		</TABLE>
+		<P>Setup the text selection as passed in the rectangle. The left and top fields of the 
+			RECT describe the selection starting point and the right and bottom fields the 
+			selection end point. The caret is placed at the end of the selection. Line and 
+			column numbers start at 1. When any of the given values is out of range the 
+			message returns zero and the selection is not set.</P>
+		<UL>
+			<LI>
+				Returns zero on failure and non-zero on success.</LI></UL>
+		<DL>
+			<DT><EM>pPositions</EM>
+				<DD>
+					A pointer to a RECT structure describing the new selection positions.&nbsp;Line 
+					and column numbers start at 1 and can go upto the amount of lines in the text 
+					or the&nbsp;length of the line you put the selection marker on. Any values 
+					beyond this range will result in failure and the selection is not set.</DD></DL>
+		<P>NOTE: The column position is the view position. This means that with a tab size of 8 
+			the columns covered by a tab are upto 8 column positions.</P>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>BCM_GETLINE</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p><font color="#000000" size="4"><strong>BCM_GETLINE</strong></font></p>
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+    <tr>
+        <td width="100%" bgcolor="#E6E6E6"><pre>BCM_GETLINE
+	wParam = ( WPARAM )( int )nLineNum;
+	lParam = ( LPARAM )( LPTSTR )lpszBuffer;</pre>
+        </td>
+    </tr>
+</table>
+
+<p>Retrieves the line currently under the caret or a specific line.</p>
+
+<ul>
+    <li>Returns one of the following:</li>
+    <ul type="disc">
+    	<li>Zero for failure.</li>
+	<li>A global memory handle when the message has
+	allocated the memory for you.</li>
+	<li>A pointer to the input buffer.</li>
+    </ul>
+</ul>
+
+<dl>
+    <dt><em>nLineNum</em></dt>
+    <dd>The number of the line you want to get or -1 in which case
+    the line on which the caret is located will be copied.
+    </dd>
+    <dt><em>lpszBuffer</em></dt>
+    <dd>This can be a pointer to a buffer large enough to
+	hold the text. Use the <a href="getlinelength.htm">BCM_GETLINELENGTH</a> message
+	to determine the size necessary to store the text.
+	<p>If this is zero the routine will allocate the
+	necessary memory for you and return it to you as a
+	global memory handle. You are responsible for
+	dealocating the handle when you are done with it.</p>
+</dd>
+</dl>
+
+</body>
+</html>

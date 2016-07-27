@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>CreateCList</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body bgcolor="#ffffff">
+		<p><font color="#000000" size="4"><strong>IsNonModalDialogMessage</strong></font></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%">
+			<tr>
+				<td width="100%" bgcolor="#e6e6e6"><pre>BOOL IsNonModalDialogMessage(
+	const LPMSG	lpMsg
+);</pre>
+				</td>
+			</tr>
+		</table>
+		<p>Checks to see if the message belongs to one of the non-modal dialogs that can be 
+			created by the Brainchild control.</p>
+		<ul type="disc">
+			<li>
+				Returns a zero when the message was not processed and non-zero if it was. When 
+				this function returns non-zero no further processing should be done on the 
+				message.</li>
+		</ul>
+		<DL>
+			<dt><em>lpMsg</em>&nbsp;
+				<dd>
+					A pointer to the message which should be checked.</dd></DL>
+		<P><STRONG>NOTE:<BR>
+			</STRONG>The function will check the non-modal dialogs&nbsp;of&nbsp;<STRONG>all</STRONG>
+			Brainchild controls which have been created by the calling thread. Requires at 
+			least version 2.4 of brainchild.</P>
+		<p><strong>Sample message loop</strong></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%" bgcolor="#e6e6e6" bordercolor="#ffffff"
+			bordercolordark="#ffffff" bordercolorlight="#ffffff">
+			<tr>
+				<td><pre><PRE><BR><BR>LRESULT MainMessageLoop()
+{<BR>        MSG msg;<BR>&nbsp;       while ( GetMessage( &amp;msg, NULL, 0, 0 ) &gt; 0 ) <BR>        {<BR>                if ( IsNonModalDialogMessage( &amp;msg ))<BR>                        continue;<BR> <BR>                /* Some more pre-processing. */<BR>                /* ... */<BR>                TranslateMessage( &amp;msg );<BR>                DispatchMessage( &amp;msg );<BR>         }<BR>         return ( LRESULT )msg.wParam;<BR>}</PRE></pre>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

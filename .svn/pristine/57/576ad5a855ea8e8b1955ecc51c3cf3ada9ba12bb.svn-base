@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>BCM_GETFILEINFO</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p><font color="#000000" size="4"><strong>BCM_GETFILEINFO</strong></font></p>
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+    <tr>
+        <td width="100%" bgcolor="#E6E6E6"><pre>BCM_GETFILEINFO
+	wParam = 0;
+	lParam = ( LPARAM )( LPFILEINFO )lpFileInfo;</pre>
+        </td>
+    </tr>
+</table>
+
+<p>Query for file information on the current control contents.</p>
+
+<ul>
+    <li>Returns non-zero for success and zero for failure.</li>
+</ul>
+
+<dl>
+    <dt><em>lpFileInfo</em></dt>
+    <dd>A pointer to a <a href="fileinfo.htm">FILEINFO</a> structure which will contain the file information
+    on the control contents when the message succeeded.</dd>
+</dl>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>General Page</title>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</head>
+	<body>
+		<p><IMG alt="" src="Files.jpg"></p>
+		<p>This is the Files page of the Brainchild configuration program. With it you can 
+			change the default file mode and file backup options. The various settings are 
+			explaned below:</p>
+		<table border="1" width="100%" cellspacing="0" cellPadding="2">
+			<tr>
+				<td width="35%">Default file mode</td>
+				<td width="65%">Here you can choose the default file mode. There are three options:
+					<ol>
+						<li>
+							<b>MS DOS</b>
+						- Terminates lines with a carriage return and a line feed.
+						<li>
+							<b>Macintosh</b>
+						- Terminates lines with a carriage return.
+						<li>
+							<b>Unix</b> - Terminates lines with a line feed.</li>
+					</ol>
+					<p>The mode you select here is only for the files created by Brainchild. When you load 
+						a file from disk it's mode will automatically be used to save it also.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="35%">Backup files before saving</td>
+				<td width="65%">When this option is checked Brainchild will backup any existing file 
+					before overwriting it. Below this checkbox you can choose the way the file is 
+					backed up.</td>
+			</tr>
+			<tr>
+				<td width="35%">FILE.BAK</td>
+				<td width="65%">Using this method of file backup will change the file extention of the 
+					already existing file to ".BAK". I.E. A file called "program.c" will become 
+					"program.BAK" in the same directory.</td>
+			</tr>
+			<tr>
+				<td width="35%">FILE.BAK.EXT</td>
+				<td width="65%">Using this method of file backup will change the file extention of the 
+					already existing file to ".BAK.ext". I.E. A file called "program.c" will become 
+					"program.BAK.c" in the same directory.</td>
+			</tr>
+			<tr>
+				<td width="35%">FILE.EXT.BAK</td>
+				<td width="65%">Using this method of file backup will change the file extention of the 
+					already existing file to ".ext.BAK". I.E. A file called "program.c" will become 
+					"program.c.BAK" in the same directory.</td>
+			</tr>
+			<tr>
+				<td width="35%">FILE.EXT in folder</td>
+				<td width="65%">Using this method of file backup will copy the file to the specified 
+					folde before overwriting it. When you click on the "..." button a folder dialog 
+					will open in which you can select the destination folder.</td>
+			</tr>
+		</table>
+	</body>
+</html>

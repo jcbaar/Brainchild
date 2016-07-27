@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>BCM_SAVEFILE</title>
+	</head>
+	<body bgcolor="#ffffff">
+		<p><font color="#000000" size="4"><strong>BCM_SAVEFILE</strong></font></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%">
+			<tr>
+				<td width="100%" bgcolor="#e6e6e6"><pre>
+BCM_SAVEFILE
+	wParam = 0; // Not used.
+	lParam = ( LPARAM )( LPCTSTR )lpszFilename;</pre>
+				</td>
+			</tr>
+		</table>
+		<p>Saves the control contents to the specified file.</p>
+		<UL type="disc">
+			<li>
+				Returns non-zero for success and zero for failure
+				<ul type="disc">
+					<LI>
+						BCMR_OK<BR>
+					No problems.
+					<LI>
+						BCMR_ERROR
+						<BR>
+					An error occured during the file saving. Use GetLastError() to find out more 
+					about the error.
+					<LI>
+						BCMR_BACKUP_ERROR<BR>
+						An error occured during file backup. Use GetLastError() to find out more about 
+						the error.</LI></ul>
+			</li>
+		</UL>
+		<DL>
+			<dt><em>lpszFilename</em>
+				<dd>
+					When this is NULL the current control path is used to save the control 
+					contents. Otherwise this should point to a 0-terminated string containing the 
+					full path&nbsp;under which the control contents is saved.</dd></DL>
+	</body>
+</html>

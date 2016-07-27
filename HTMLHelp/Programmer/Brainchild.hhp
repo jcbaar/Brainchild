@@ -1,0 +1,26 @@
+
+[OPTIONS]
+;Index file=Brainchild.hhk
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=Brainchild.chm
+Contents file=Brainchild.hhc
+Default Font=Tahoma,8,0
+Default Window=Brainchild
+Default topic=brainchild.htm
+Display compile progress=Yes
+Error log file=errorlog.txt
+Flat=Yes
+Full-text search=Yes
+Language=0x409 English (United States)
+Title=Brainchild Help
+
+[WINDOWS]
+Brainchild="Brainchild version 2.5 Help","Brainchild.hhc",,"brainchild.htm","brainchild.htm",,,,,0x43520,300,0x306e,[271,372,593,566],0xb0000,,,,,,0
+
+
+[FILES]
+opened.gif
+
+[INFOTYPES]
+

@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>BCM_GETTEXT</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body bgcolor="#ffffff">
+		<p><font color="#000000" size="4"><strong>BCM_CLEARMARKERS</strong></font></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%">
+			<tr>
+				<td width="100%" bgcolor="#e6e6e6"><pre>BCM_CLEARMARKERS
+	wParam = ( WPARAM )( int )nMarker;
+	lParam = 0; /* Not used */</pre>
+				</td>
+			</tr>
+		</table>
+		<p>Clears all markers of the specified type.</p>
+		<ul>
+			<ul type="disc">
+				<li>
+					Returns TRUE if all the markers of the specified type where cleared.</li>
+			</ul>
+		</ul>
+		<DL>
+			<dt><em>nMarker</em>&nbsp;
+				<DD>
+					The marker to clear. This must be a number between 1 and 5. <DT>&nbsp;</DT></DL>
+	</body>
+</html>

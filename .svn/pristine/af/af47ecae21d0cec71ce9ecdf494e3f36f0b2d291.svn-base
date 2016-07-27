@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<title>Brainchild</title>
+		<meta content="False" name="vs_showGrid">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script language="JavaScript" src="script.js"></script>
+	</head>
+	<body>
+		<h1>Brainchild version 2.5
+		</h1>
+		<hr>
+		<h1><strong><font size="4">Documentation</font></strong>
+		</h1>
+		<p>
+			Brainchild is a custom editor control which allows programmers to include 
+			powerful and modern editing capabilities to their own applications. The 
+			brainchild editor control has many features you would expect from a modern 
+			editor.
+		</p>
+		<a onclick="doExpand( para1, arrow1 )" href="#nowhere"><img id="arrow1" src="closed.gif" border="0">History</a>
+		<div class="expara" id="para1" style="DISPLAY: none">
+			<p>
+				I started brainchild back in 1993 on the Amiga computer. For a couple of years 
+				I used it as the editor for all my projects on that machine without ever 
+				releasing it to the general public. When the Amiga was all but dead and I 
+				switched to the Windows platform I really missed my old editor so I started 
+				porting my old code to the Windows&nbsp;OS. Since I used Visual C++ 6.0 I kind 
+				of gotten used to the editor this IDE offered so it is no surprise that the 
+				current Brainchild version is modelled after the VC++ 6.0 editor.
+			</p>
+			<p>
+				The first windows running Brainchild was not a custom control. It was a simple 
+				SDI application which was a simple port of the Amiga version. Problem was that 
+				the old Amiga code was very outdated. It did not have&nbsp;multi-level 
+				undo/redo, line length was limited to 1000 bytes and it did not use syntax 
+				coloring. In short it was not of this day and age. After having looked at about 
+				all the editor source-code on the Web I stumbled accross the <font color="#000000">CrystalEdit 
+					MFC</font> components written by Andrei <font color="#000000">Stcherbatchenko</font>
+				<font color="#000000">. These components had&nbsp;two features which were at the top of 
+					my list:</font>
+			</p>
+			<ul>
+				<li>
+				Multi-level undo/redo.
+				<li>
+					Syntax coloring.
+				</li>
+			</ul>
+			<p>
+				I have used his code to base the undo/redo of the Brainchild control on. I have 
+				written my own version of syntax coloring since I wanted to make it 
+				customizable for the end user. The <font color="#000000">CrystalEdit&nbsp;</font>components 
+				only understood C/C++ code. With the Brainchild control you can add text 
+				classes which have fully configurable syntax-coloring.
+			</p>
+		</div>
+		<br>
+		<a onclick="doExpand( para2, arrow2 )" href="#nowhere"><img id="arrow2" src="closed.gif" border="0">Features</a>
+		<div class="expara" id="para2" style="DISPLAY: none">
+			<p>
+			</p>
+			<li>
+			Based on text classes. Settings can be changed for each class. Classes are 
+			defined by the file extention.&nbsp;
+			<li>
+			Fully customizable syntax coloring.
+			<li>
+			Syntax coloring available both on screen and on printer outputs.
+			<li>
+			Multi-level undo/redo. Maximum number of hops settable.
+			<li>
+			File size only limited by available memory.
+			<li>
+			As many bookmarks possible as there are lines in the text.
+			<li>
+			Fully customizable keyboard.
+			<li>
+			Text selection margin.
+			<LI>
+			Line number margin.&nbsp;
+			<li>
+			OLE Drag and Drop editing capabilities.
+			<li>
+			Automatic and smart indention scemes.
+			<li>
+				etc...
+			</li>
+		</div>
+		<p align="left">
+			Thanks to <font color="#ff0000"><font color="#000000">Andrei </font><font color="#000000">Stcherbatchenko</font></font>
+			for&nbsp; the <font color="#000000"><a href="http://www.codeproject.com/editctrl/crysedit.asp">CrystalEdit</a></font>
+			components on which part of this code is based.
+		</p>
+		<p align="center">
+			(C) Copyright 1993-2006 by <a href="mailto:jcbaar@croon.nl">Jan van den Baard</a>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+
+ Brainchild Syntax Coloring custom edit control version 1.2
+ (C) Copyright 1993-2001 Jan van den Baard.
+ All Rights Reserved.
+ ==========================================================
+ TODO (In no particular order...)
+ ==========================================================
+
+ - Add a "Default file extention" option to set the file
+   extention of files which are saved without an extention.
+
+ - Add an option which will disable the backspace key at
+   the start of the line.
+
+ - Add the maximum number of tracked search/replace strings
+   to the configuration program. As of now it is fixed to
+   20.

@@ -1,0 +1,179 @@
+
+ Brainchild edit control configuration tool version 2.5
+ (C) Copyright 1993-2005 Jan van den Baard.
+ All Rights Reserved.
+ ==========================================================
+ REVISION HISTORY (Most recent first)
+ ==========================================================
+
+ Changes 2.6
+ ==========================================================
+ - Changed the signature of CodeQual2Str to include a 
+   length parameter. (3-8-2012)
+
+ Changes 2.5
+ ==========================================================
+ - Added the possibility to select the color of the 5
+   extra line markers. (22-10-2005)
+ - The tool will now ask the user to select a directory to
+   store the settings files when there is no registry key
+   available. The tool will also create the appropiate
+   directories and when there are no files present the tool
+   will save a default parser in the user it's settings
+   directory. (22-10-2005)
+ - The configuration tool forgot to reset the colors of the
+   brainchild control after editing the keywords. Fixed.
+   (1-2-2006)
+ - Added the possibility to select the text color of the 5
+   extra line markers. (4-2-2006)
+ - Added the 'Linemargin Width' option. (16-2-2006)
+ - Fixed a bug which prevented users from creating a new
+   parser file. Whoops. (17-2-2005)
+ - Added a Comments page which can be used to configure the
+   comment identifiers necessary for the (Un)Comment
+   selection functionallity. (23-2-2006)
+ - Added a help button on the printer page. It opens a
+   balloon explaining the formatting sequences which can be
+   used in the header and footer options. (23-2-2006)
+ - Moved the color settings for the custom line markers
+   onto it's own seperate page. This will make it easier
+   to add more options for the custom markers. Also moved
+   the bookmark and line highlight color settings to this
+   page. (24-2-2006)
+ - Moved the "Highlight current line" option to the
+   markers page. (3-3-2006)
+ - Fixed a bug which seriously screwed up the colors when
+   saving the settings. (23-5-2006)
+ - Added the SaveTabsAsSpaces option. (28-6-2006)
+ - Added the Scroll Lines option. (3-7-2006)
+ - Added the "don't check for escape characters' option to
+   the block editor. (11-8-2006)
+ - Fixed another bug in the syntax color selection list.
+   Loading the colors did not work properly and selections
+   where overwritten by faulty values when the color list
+   was build. (14-8-2006)
+ - Now compiles using Visual Studio 2005. (7-5-2007)
+ - Added the configuration of column marker overflow
+   rendering. (14-4-2008)
+ - Now uses 24bit images. (16-4-2008)
+ - Now uses gray-scaled images for the disable buttons on
+   the toolbars. (17-4-2008)
+
+ Changes 2.4
+ ==========================================================
+ - Added configuration options to select the background
+   color of text blocks, keywords, numbers and delimiters.
+   (7-10-2004)
+ - Not all strings where located in the string table.
+   (16-10-2004)
+ - Added configuration options to turn highlighting of
+   matched brackets on or off. Als added a color option to
+   select the highlight color of matched brackets.
+   (16-10-2004)
+ - Now a message box is shown when the user exits the dialog
+   and there are unsaved changes. (16-2-2005)
+ - The expanded item in the tree will not collapse anymore
+   when you click on it. It will collapse when another item
+   is selected. (20-2-2005)
+ - When a selection of the general settings page is made
+   that is not the default parser the general settings
+   will be hidden and the option list will be expanded.
+   (9-3-2005)
+ - Added the "Parse Hyperlinks" option. With it you can turn
+   on or off the parsing of hyperlinks in the text. Also
+   added the hyperlink and hyperlink background colors.
+   (9-4-2005)
+ - Added the option to turn on or off the tooltips shown
+   when hovering a hyperlink. (16-4-2005)
+
+ Changes 2.3
+ ==========================================================
+ - No longer exports DllGetVersion in the link-lib. Use the
+   GetProcAddress API to get to this. (2-10-2003)
+ - Added the Case-fixing flag. (15-5-2004)
+ - Added the Solid margin flag. (25-5-2004)
+ - Selecting an item in the option tree will automatically
+   toggle it's check now. (25-5-2004)
+ - Added the Column marker option. (1-7-2004)
+
+ Changes 2.2
+ ==========================================================
+ - String resources language was set to DUTCH which they
+   obviously were not. (31-5-2003)
+ - Fixed a couple of small bugs. (24-9-2003)
+ - Fixed a crash in the printer page when trying to apply
+   a change in the rightaligned header text. (24-3-2005)
+ - Added the "Print line numbers." option to the printer
+   page. (25-3-2005).
+ - Empty strings (all blanks) will no longer be interpreted
+   as valid in the edit boxes. (25-3-2005)
+ - Added the "Print line numbers" option to the printer
+   page. (27-3-2005)
+ - Strings entered in the edit boxes which only contain
+   blanks will now be handled as empty strings. (27-3-2005)
+
+ Changes 2.1
+ ==========================================================
+ - Moved the options checkboxes from the general page into
+   a treeview control with checkboxes. This will allow for
+   more options. (23-11-2002)
+ - Added the "Show line numbers" options. This also ment
+   two extra common colors. One for the text of the line
+   numbers and one for the background of the line number
+   margin. (23-11-2002)
+ - The Caret style combobox selected the wrong style.
+   (31-3-2003)
+ - Added the horizontal style caret. (31-3-2003)
+ - The global syntax coloring flag now sets the correct
+   settings value. It used to set the local syntax coloring
+   flag. (31-3-2003)
+ - It was possible to collapse the option treeview hiding
+   options from the list. (26-4-2003)
+
+ Changes 2.0
+ ==========================================================
+ - Due to a harddisk crash I lost the complete change log
+   (and then some...) of version 1.4 through 2.0.
+   (17-3-2002)
+ - Tweaked the treeview a bit. Added images to the entries
+   and made it single expand. (17-3-2002)
+ - Added the "Visible whitespaces" option. (23-3-2002)
+ - When the the GetUserName() API fails during the
+   determination of the settings files to use the default
+   files are used. (7-5-2002)
+ - The "key recorder" did not see all key combinations.
+   (19-7-2002)
+ - Added the search history global setting on the general
+   page (24-7-2002)
+ - The color popup in the block editor and the keyword
+   list editor do not show the default choise anymore.
+   (3-8-2002)
+ - Change the ClsDirBrowser control in the files page to a
+   ClsFileDirBrowser control.
+
+ Changes 1.3 -> 1.4
+ ==========================================================
+
+ - Fixed a few minor problems.
+
+ Changes 1.2 -> 1.3
+ ==========================================================
+
+ - Updated the Copyright notices.
+ - Added the "Fast scrolling" option to the general page.
+
+ Changes 1.1 -> 1.2
+ ==========================================================
+
+ - Added two new colors in the "General Colors" list on the
+   "Syntax Coloring" page which you can use to set the text
+   and background color of selected text.
+
+ Changes 1.0 -> 1.1
+ ==========================================================
+
+ - Tweaked the GUI a bit. It all looks better now.
+
+ - Changed the "at the first white space." option of the
+   Block editor dialog to "at the first white space or
+   delimiter."

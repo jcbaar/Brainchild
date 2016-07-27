@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>BCM_GETLINELENGTH</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body bgcolor="#ffffff">
+		<p><font color="#000000" size="4"><strong>BCM_NUMCHARSINLINE</strong></font></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%">
+			<tr>
+				<td width="100%" bgcolor="#e6e6e6"><pre>BCM_NUMCHARSINLINE
+	wParam = ( WPARAM )( int )nLineNum;
+	lParam = ( LPARAM )( BOOL )bVirtual;</pre>
+				</td>
+			</tr>
+		</table>
+		<p>Get the number of character on the line.</p>
+		<ul>
+			<li>
+				Returns the size, in bytes, required to hold the line. In case of an error -1 
+				is returned.</li>
+		</ul>
+		<DL>
+			<dt><em>nLineNum</em>
+				<dd>
+					The number of the line you want to know the the number of characters in it or 
+					-1 in which case the number of characters of the line on which the caret is 
+					located will be returned. <DT><EM>bVirtual</EM>
+						<DD>
+							TRUE if the number of characters returned should be the number of characters 
+							when tabs are converted to spaces.</DD></DL>
+		<P>&nbsp;</P>
+	</body>
+</html>

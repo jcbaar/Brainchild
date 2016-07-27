@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<body>
+		<P><FONT color="#000000" size="4"><STRONG>BCM_GETSELECTIONPOINTS</STRONG></FONT></P>
+		<TABLE id="Table1" cellSpacing="3" cellPadding="0" width="100%" border="0">
+			<TR>
+				<TD width="100%" bgColor="#e6e6e6"><PRE>BCM_GETSELECTIONPOINTS
+	wParam = 0;
+	lParam = ( LPARAM )( LPRECT )pPositions;</PRE>
+				</TD>
+			</TR>
+		</TABLE>
+		<P>
+			Get the start and end points of the current text selection. When there is no 
+			selection all points are set to -1 and the message retursn zero. The left and 
+			top fields of the RECT will describe the selection starting point and the right 
+			and bottom fields the selection end point. Line and column numbers start at 1.</P>
+		<UL>
+			<LI>
+				Returns zero on failure and non-zero on success. Failure normally indicates 
+				that there is no selection.</LI></UL>
+		<DL>
+			<DT><EM>pPositions</EM>
+				<DD>
+					A pointer to a RECT structure&nbsp;in which the&nbsp;selection positions are 
+					stored.&nbsp;Line and column numbers start at 1 and can go upto the amount of 
+					lines in the text or the&nbsp;length of the line on which the markers are 
+					currently set.</DD></DL>
+		<P>NOTE: The column position is the view position. This means that with a tab size of 8 
+			the columns covered by a tab are upto 8 column positions.</P>
+	</body>
+</html>

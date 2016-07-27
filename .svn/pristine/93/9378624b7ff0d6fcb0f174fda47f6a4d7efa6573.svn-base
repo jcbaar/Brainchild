@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>BCM_EXECUTECLIST</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p><font color="#000000" size="4"><strong>BCM_EXECUTECLIST</strong></font></p>
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+    <tr>
+        <td width="100%" bgcolor="#E6E6E6"><pre>BCM_EXECUTECLIST
+	wParam = 0;
+	lParam = ( LPARAM )( LPCOMLIST )lpcList;</pre>
+        </td>
+    </tr>
+</table>
+
+<p>Executes the specified command list.</p>
+
+<ul>
+    <li>No return code defined..</li>
+</ul>
+
+<dl>
+    <dt><em>lpcList</em></dt>
+    <dd>A pointer to a command list previously created by the <a href="createclist.htm">CreateCList</a>
+    function.</dd>
+</dl>
+
+</body>
+</html>

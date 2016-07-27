@@ -1,0 +1,650 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+<html>
+	<head>
+		<title>Hardcoded</title>
+		<script language="JavaScript" src="script.js"></script>
+	</head>
+	<body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+		<p>Following is a list of commands which can be executed using the <a href="executecommand.htm">
+				BCM_EXECUTECOMMAND</a> message or as data for the <strong>CTYPE_HARDCODED</strong>
+			command types in the <a href="createclist.htm">CreateCList</a> function.</p>
+		<p><strong>Caret commands:</strong></p>
+		<a onclick="doExpand( p1, a1 )" href="#nop"><img src="closed.gif" id="a1" border="0">CID_CARET_LEFT, 
+			CID_CARET_LEFTEXTEND </a>
+		<div class="expara" id="p1" style="DISPLAY: none">
+			<p>This command will move the caret one character to the left. When the caret is on the 
+				first position of the current line it is moved to the last position of the 
+				previous line.</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p2, a2 )" href="#nop"><img src="closed.gif" id="a2" border="0">CID_CARET_RIGHT, 
+			CID_CARET_RIGHTEXTEND </a>
+		<div class="expara" id="p2" style="DISPLAY: none">
+			<p>This command will move the caret one character to the right. When the caret is on 
+				the last position of the current line it is moved to the first position of the 
+				next line.</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p3, a3 )" href="#nop"><img src="closed.gif" id="a3" border="0">CID_CARET_UP, 
+			CID_CARET_UPEXTEND </a>
+		<div class="expara" id="p3" style="DISPLAY: none">
+			<p>This command will move the caret one line up. The caret column position will be set 
+				as close to it's previous column position as possible.</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p4, a4 )" href="#nop"><img src="closed.gif" id="a4" border="0">CID_CARET_DOWN, 
+			CID_CARET_DOWNEXTEND </a>
+		<div class="expara" id="p4" style="DISPLAY: none">
+			<p>This command will move the caret one line down. The caret column position will be 
+				set as close to it's previous column position as possible. When the caret is on 
+				the last line but not on the last column it will be moved to the last column</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p5, a5 )" href="#nop"><img src="closed.gif" id="a5" border="0">CID_CARET_EOL, 
+			CID_CARET_EOLEXTEND </a>
+		<div class="expara" id="p5" style="DISPLAY: none">
+			<p>This command will move the caret to the end of the line it is currently on. If the 
+				caret is already at the end nothing happens.</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p6, a6 )" href="#nop"><img src="closed.gif" id="a6" border="0">CID_CARET_SOL, 
+			CID_CARET_SOLEXTEND </a>
+		<div class="expara" id="p6" style="DISPLAY: none">
+			<p>This command will move the caret to the start of the line it is currently on. If the 
+				caret is already at the start nothing happens.</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p7, a7 )" href="#nop"><img src="closed.gif" id="a7" border="0">CID_CARET_NEXTWORD, 
+			CID_CARET_NEXTWORDEXTEND </a>
+		<div class="expara" id="p7" style="DISPLAY: none">
+			<p>This command will move in one of the following ways:
+				<ul type="desc">
+					<li>
+					When the caret is located on a delimiter character the caret is moved right 
+					until the first non-delimiter and non-white space is found
+					<li>
+					When the caret is located on a non-delimiter character and not on a white space 
+					character the caret is moved to the start of the next word.
+					<li>
+					These commands will move the caret in one of the following ways:
+					<li>
+					When the caret is located on a white space the caret is moved to the start of 
+					the next word or the the next delimiter depending on what comes first.
+					<li>
+						When the caret is located on the last word, delimiters or white-space of the 
+						current line the caret is moved to the first word or delimiter of the next 
+						line.</li>
+				</ul>
+			<P></P>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p8, a8 )" href="#nop"><img src="closed.gif" id="a8" border="0">CID_CARET_PREVWORD, 
+			CID_CARET_PREVWORDEXTEND </a>
+		<div class="expara" id="p8" style="DISPLAY: none">
+			<p>This command will move in one of the following ways:
+				<ul type="desc">
+					<li>
+					When the caret is located on a delimiter character and it is preceeded by 
+					delimiters the caret is moved left to the first delimiter.
+					<li>
+					When the caret is located on a delimiter character and it is not preceeded by 
+					delimiters the caret is move to the start of the previous word or delimiters.
+					<li>
+					When the caret is located on a non-delimiter character and not on a white-space 
+					character the caret is moved to the start of the current word.
+					<li>
+					When the caret is located on a white space the caret is moved to the start of 
+					the previous word or the the previous delimiters depending on what comes first.
+					<li>
+						When the caret is located on the start of the first word, delimiters or 
+						white-space of the current line the caret is moved to the start of the last 
+						word or delimiters of the previous line.</li>
+				</ul>
+			<P></P>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p9, a9 )" href="#nop"><img src="closed.gif" id="a9" border="0">CID_CARET_HOME, 
+			CID_CARET_HOMEEXXTEND </a>
+		<div class="expara" id="p9" style="DISPLAY: none">
+			<p>
+			This command will move the caret to the beginning of the text. When the caret 
+			is already at this location nothing happens.
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p10, a10 )" href="#nop"><img src="closed.gif" id="a10" border="0">CID_CARET_END, 
+			CID_CARET_ENDEXTEND </a>
+		<div class="expara" id="p10" style="DISPLAY: none">
+			<p>
+			This command will move the caret to the end of the text. When the caret is 
+			already at this location nothing happens.
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p11, a11 )" href="#nop"><img src="closed.gif" id="a11" border="0">CID_CARET_TABBACK, 
+			CID_CARET_TABBACKEXTEND </a>
+		<div class="expara" id="p11" style="DISPLAY: none">
+			<p>
+			This command will move the caret to the previous tab-stop position. When the 
+			caret is located at the start of the line nothing happens.
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p12, a12 )" href="#nop"><img src="closed.gif" id="a12" border="0">CID_CARET_VIEWUP, 
+			CID_CARET_VIEWUPEXTEND </a>
+		<div class="expara" id="p12" style="DISPLAY: none">
+			<p>This command will move the caret one view up when it is located on the top line 
+				currently in the view. When the caret is not located on the top line of the 
+				view it will be moved there.</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p13, a13 )" href="#nop"><img src="closed.gif" id="a13" border="0">CID_CARET_VIEWDOWN, 
+			CID_CARET_VIEWDOWNEXTEND </a>
+		<div class="expara" id="p13" style="DISPLAY: none">
+			<p>This command will move the caret one view down when it is located on the bottom line 
+				currently in the view. When the caret is not located on the bottom line of the 
+				view it will be moved there.</p>
+			<p>In addition to the caret movement the EXTEND command will also extend the current 
+				selection to the new caret position.</p>
+		</div>
+		<p><strong><STRONG>Miscellanious&nbsp;commands:</STRONG></strong></p>
+		<P><A onclick="doExpand( p14, a14 )" href="#nop"><IMG id="a14" src="closed.gif" border="0">CID_MISC_CLEARUNDOBUFFERS&nbsp;</A></P>
+		<DIV class="expara" id="p14" style="DISPLAY: none">
+			<P>This command will clear all entries from the undo/redo buffers. It will also reset 
+				the save position. Clearing the undo/redo buffers means that undoing or 
+				redoing past actions is no longer possible since this information is purged.</P>
+		</DIV>
+		<P><STRONG>View commands:</STRONG></P>
+		<br>
+		<a onclick="doExpand( p114, a114 )" href="#nop"><img src="closed.gif" id="a114" border="0">CID_SCROLLVIEW_UP
+		</a>
+		<div class="expara" id="p114" style="DISPLAY: none">
+			<p>This command will scroll the view one line up. The command will always keep the 
+				caret inside the view. When it reaches the bottom of the view the caret is 
+				automatically moved to the next line.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p115, a115 )" href="#nop"><img src="closed.gif" id="a115" border="0">CID_SCROLLVIEW_DOWN
+		</a>
+		<div class="expara" id="p115" style="DISPLAY: none">
+			<p>This command will scroll the view one line down. The command will always keep the 
+				caret inside the view. When it reaches the top of the view the caret is 
+				automatically moved to the previous line.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p116, a116 )" href="#nop"><img src="closed.gif" id="a116" border="0">CID_SCROLLVIEW_LEFT
+		</a>
+		<div class="expara" id="p116" style="DISPLAY: none">
+			<p>This command will scroll the view one column to the left. The caret is not moved.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p117, a117 )" href="#nop"><img src="closed.gif" id="a117" border="0">CID_SCROLLVIEW_RIGHT
+		</a>
+		<div class="expara" id="p117" style="DISPLAY: none">
+			<p>This command will scroll the view one column to the right. The caret is not moved.</p>
+		</div>
+		<p><strong>Edit commands:</strong></p>
+		<br>
+		<a onclick="doExpand( p218, a218 )" href="#nop"><img src="closed.gif" id="a218" border="0">CID_EDIT_UNDO
+		</a>
+		<div class="expara" id="p218" style="DISPLAY: none">
+			<p>This command will undo the last change made to the edit control contents. You can 
+				undo any number of changes made to the control contents up to the maximum 
+				number of undo/redo hops.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p219, a219 )" href="#nop"><img src="closed.gif" id="a219" border="0">CID_EDIT_REDO
+		</a>
+		<div class="expara" id="p219" style="DISPLAY: none">
+			<p>This command will redo the last change you have un-done by the <strong>CID_EDIT_UNDO</strong>
+				command. You can re-do any number of changes upto the number of changes 
+				un-done.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p220, a220 )" href="#nop"><img src="closed.gif" id="a220" border="0">CID_EDIT_UNDOALL
+		</a>
+		<div class="expara" id="p220" style="DISPLAY: none">
+			<p>This command will undo all changes which are still in the undo/redo buffer. If there 
+				are less changes made to the control contents than there are hops in the 
+				undo-redo buffer this will revert the control contents to it's original state.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p221, a221 )" href="#nop"><img src="closed.gif" id="a221" border="0">CID_EDIT_REDOALL
+		</a>
+		<div class="expara" id="p221" style="DISPLAY: none">
+			<p>This command will redo all the un-done changes bringing the control contents back to 
+				the state it was in after the last change made to it.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p222, a222 )" href="#nop"><img src="closed.gif" id="a222" border="0">CID_EDIT_PULL
+		</a>
+		<div class="expara" id="p222" style="DISPLAY: none">
+			<p>This command will remove all white-spaces between the current caret position and the 
+				following non white-space character.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p223, a223 )" href="#nop"><img src="closed.gif" id="a223" border="0">CID_EDIT_DELETEEOL
+		</a>
+		<div class="expara" id="p223" style="DISPLAY: none">
+			<p>This command will remove all characters right of the current caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p224, a224 )" href="#nop"><img src="closed.gif" id="a224" border="0">CID_EDIT_BACKSPACE
+		</a>
+		<div class="expara" id="p224" style="DISPLAY: none">
+			<p>This command will remove the character left of the caret. When the caret is located 
+				at the start of the line the characters right of the caret are appended to the 
+				previous line and the caret is moved to be positioned between the old line 
+				contents and the appended characters.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p225, a225 )" href="#nop"><img src="closed.gif" id="a225" border="0">CID_EDIT_DELETECHAR
+		</a>
+		<div class="expara" id="p225" style="DISPLAY: none">
+			<p>This command removes the character right of the caret. When there are no characters 
+				right of the caret the contents of the next line is appended to the current 
+				line.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p226, a226 )" href="#nop"><img src="closed.gif" id="a226" border="0">CID_EDIT_SPLITLINE
+		</a>
+		<div class="expara" id="p226" style="DISPLAY: none">
+			<p>This command will split the current line and create a new line of the characters, if 
+				any, right of the caret. The caret is moved to the start of the newly created 
+				line.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p227, a227 )" href="#nop"><img src="closed.gif" id="a227" border="0">CID_EDIT_WORDTOUPPER
+		</a>
+		<div class="expara" id="p227" style="DISPLAY: none">
+			<p>This command will convert all lower-case characters of the word under the caret to 
+				upper-case characters. If the caret is not located on a word nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p228, a228 )" href="#nop"><img src="closed.gif" id="a228" border="0">CID_EDIT_WORDTOLOWER
+		</a>
+		<div class="expara" id="p228" style="DISPLAY: none">
+			<p>This command will convert all upper-case characters of the word under the caret to 
+				lower-case characters. If the caret is not located on a word nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p229, a229 )" href="#nop"><img src="closed.gif" id="a229" border="0">CID_EDIT_WORDSWAPCASE
+		</a>
+		<div class="expara" id="p229" style="DISPLAY: none">
+			<p>This command will convert all lower-case characters to upper-case characters and 
+				upper-case characters to lower-case characters of the word under the caret. If 
+				the caret is not located on a word nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p230, a230 )" href="#nop"><img src="closed.gif" id="a230" border="0">CID_EDIT_COPYLINE
+		</a>
+		<div class="expara" id="p230" style="DISPLAY: none">
+			<p>This command will create a copy of the line on which the caret is currently located. 
+				The created copy of the line is inserted before the line which is copied.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p231, a231 )" href="#nop"><img src="closed.gif" id="a231" border="0">CID_EDIT_DELETEWORD
+		</a>
+		<div class="expara" id="p231" style="DISPLAY: none">
+			<p>This command will delete the word under the caret. If the caret is not located on a 
+				word nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p232, a232 )" href="#nop"><img src="closed.gif" id="a232" border="0">CID_EDIT_DELETEEOW
+		</a>
+		<div class="expara" id="p232" style="DISPLAY: none">
+			<p>When the caret is located on a word this command will delete all characters in the 
+				word right of the caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p233, a233 )" href="#nop"><img src="closed.gif" id="a233" border="0">CID_EDIT_DELETESOW
+		</a>
+		<div class="expara" id="p233" style="DISPLAY: none">
+			<p>When the caret is located on a word this command will delete all characters in the 
+				word left of the caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p234, a234 )" href="#nop"><img src="closed.gif" id="a234" border="0">CID_EDIT_TAB
+		</a>
+		<div class="expara" id="p234" style="DISPLAY: none">
+			<p>This command does one of the two following things:
+				<ul type="disc">
+					<li>
+					When there is a valid text selection this command will indent the lines covered 
+					by the selection right by one tab-stop.
+					<li>
+						When there is no text selection a tab is inserted at the current caret 
+						position.</li>
+				</ul>
+			<P></P>
+		</div>
+		<br>
+		<a onclick="doExpand( p235, a235 )" href="#nop"><img src="closed.gif" id="a235" border="0">CID_EDIT_BACKTAB
+		</a>
+		<div class="expara" id="p235" style="DISPLAY: none">
+			<p>This command does one of the two following things:
+				<ul type="disc">
+					<li>
+					When there is a valid text selection this command will indent the lines covered 
+					by the selection left by one tab-stop.
+					<li>
+						When there is no text selection the caret is moved back to the previous 
+						tab-stop position.</li>
+				</ul>
+			<P></P>
+		</div>
+		<br>
+		<a onclick="doExpand( p236, a236 )" href="#nop"><img src="closed.gif" id="a236" border="0">CID_EDIT_SWAPLINES
+		</a>
+		<div class="expara" id="p236" style="DISPLAY: none">
+			<p>This command will swap the line on which the caret is located with the previous 
+				line. When the caret is located on the first line nothing will happen</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p237, a237 )" href="#nop"><img src="closed.gif" id="a237" border="0">CID_EDIT_UPPERCASESELECTION
+		</a>
+		<div class="expara" id="p237" style="DISPLAY: none">
+			<p>When there is a valid selection this command will convert all lower-case characters 
+				in the selection to upper-case characters. If there is no valid selection 
+				nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p238, a238 )" href="#nop"><img src="closed.gif" id="a238" border="0">CID_EDIT_LOWERCASESELECTION
+		</a>
+		<div class="expara" id="p238" style="DISPLAY: none">
+			<p>When there is a valid selection this command will convert all upper-case characters 
+				in the selection to lower-case characters. If there is no valid selection 
+				nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p239, a239 )" href="#nop"><img src="closed.gif" id="a239" border="0">CID_EDIT_SWAPCASESELECTION
+		</a>
+		<div class="expara" id="p239" style="DISPLAY: none">
+			<p>When there is a valid selection this command will convert all lower-case characters 
+				in the selection to upper-case characters and all upper-case characters in the 
+				selection to lower-case. If there is no valid selection nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p240, a240 )" href="#nop"><img src="closed.gif" id="a240" border="0">CID_EDIT_INSERTDATE
+		</a>
+		<div class="expara" id="p240" style="DISPLAY: none">
+			<p>This command will insert the system date at the current caret location. The date 
+				output is formatted using the user preferred format string.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p241, a241 )" href="#nop"><img src="closed.gif" id="a241" border="0">CID_EDIT_INSERTTIME
+		</a>
+		<div class="expara" id="p241" style="DISPLAY: none">
+			<p>This command will insert the system time at the current caret location. The time 
+				output is formatted using the user preferred format string.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p242, a242 )" href="#nop"><img src="closed.gif" id="a242" border="0">CID_EDIT_TOGGLEOVERWRITE
+		</a>
+		<div class="expara" id="p242" style="DISPLAY: none">
+			<p>This command will toggle the current editing mode from overwrite to insert or the 
+				other way around. When editing is in overwrite mode the characters you type 
+				will overwrite the characters right of the caret. In insert mode, the usual 
+				editing mode, the characters are inserted.</p>
+		</div>
+		<p><strong>Mark commands:</strong></p>
+		<br>
+		<a onclick="doExpand( p341, a341 )" href="#nop"><img src="closed.gif" id="a341" border="0">CID_MARK_WORD
+		</a>
+		<div class="expara" id="p341" style="DISPLAY: none">
+			<p>This command will select the word on which the caret is currently located. When the 
+				caret is not located on a word nothing happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p342, a342 )" href="#nop"><img src="closed.gif" id="a342" border="0">CID_MARK_ALL
+		</a>
+		<div class="expara" id="p342" style="DISPLAY: none">
+			<p>This command will select the entire control contents.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p343, a343 )" href="#nop"><img src="closed.gif" id="a343" border="0">CID_MARK_CLEAR
+		</a>
+		<div class="expara" id="p343" style="DISPLAY: none">
+			<p>This command will unselect the current selection. When there is no selection nothing 
+				happens.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p344, a344 )" href="#nop"><img src="closed.gif" id="a344" border="0">CID_MARK_LINE
+		</a>
+		<div class="expara" id="p344" style="DISPLAY: none">
+			<p>This command will select the line on which the caret is currently located</p>
+		</div>
+		<p><strong>Clipboard commands:</strong></p>
+		<br>
+		<a onclick="doExpand( p445, a445 )" href="#nop"><img src="closed.gif" id="a445" border="0">CID_CLIP_PASTE
+		</a>
+		<div class="expara" id="p445" style="DISPLAY: none">
+			<p>This command will, when there is text present on the clipboard, paste the clipboard 
+				contents at the current caret position.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p446, a446 )" href="#nop"><img src="closed.gif" id="a446" border="0">CID_CLIP_COPY
+		</a>
+		<div class="expara" id="p446" style="DISPLAY: none">
+			<p>This command will, when there is a selection , copy the selected text to the 
+				clipboard.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p447, a447 )" href="#nop"><img src="closed.gif" id="a447" border="0">CID_CLIP_CUT
+		</a>
+		<div class="expara" id="p447" style="DISPLAY: none">
+			<p>This command will, when there is a selection , copy the selected text to the 
+				clipboard. In addition the selection is removed from the text.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p448, a448 )" href="#nop"><img src="closed.gif" id="a448" border="0">CID_CLIP_DELETE
+		</a>
+		<div class="expara" id="p448" style="DISPLAY: none">
+			<p>This command will, when there is a selection , remove the selected text from the 
+				control contents.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p449, a449 )" href="#nop"><img src="closed.gif" id="a449" border="0">CID_CLIP_COPYLINE
+		</a>
+		<div class="expara" id="p449" style="DISPLAY: none">
+			<p>This command will copy the line on which the caret is located to the clipboard.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p450, a450 )" href="#nop"><img src="closed.gif" id="a450" border="0">CID_CLIP_CUTLINE
+		</a>
+		<div class="expara" id="p450" style="DISPLAY: none">
+			<p>This command will copy the line on which the caret is located to the clipboard. In 
+				addition the line is removed from the control contents.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p451, a451 )" href="#nop"><img src="closed.gif" id="a451" border="0">CID_CLIP_CLEARCLIPBOARD
+		</a>
+		<div class="expara" id="p451" style="DISPLAY: none">
+			<p>This command will clear the clipboard contents.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p452, a452 )" href="#nop"><img src="closed.gif" id="a452" border="0">CID_CLIP_COPYAPPEND
+		</a>
+		<div class="expara" id="p452" style="DISPLAY: none">
+			<p>This command will, if there is a selection, append the selection to the current 
+				clipboard contents. The result is placed on the clipboard again.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p453, a453 )" href="#nop"><img src="closed.gif" id="a453" border="0">CID_CLIP_CUTAPPEND
+		</a>
+		<div class="expara" id="p453" style="DISPLAY: none">
+			<p>This command will, if there is a selection, append the selection to the current 
+				clipboard contents. The result is placed on the clipboard again. In addition to 
+				this the selection is removed from the control contents.</p>
+		</div>
+		<p><strong>Bookmark commands:</strong></p>
+		<br>
+		<a onclick="doExpand( p554, a554 )" href="#nop"><img src="closed.gif" id="a554" border="0">CID_BOOKMARK_SET
+		</a>
+		<div class="expara" id="p554" style="DISPLAY: none">
+			<p>This command will set a bookmark on the line the caret is located on.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p555, a555 )" href="#nop"><img src="closed.gif" id="a555" border="0">CID_BOOKMARK_CLEAR
+		</a>
+		<div class="expara" id="p555" style="DISPLAY: none">
+			<p>If there is a bookmark set on the line on which the caret is located this command 
+				will clear it.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p556, a556 )" href="#nop"><img src="closed.gif" id="a556" border="0">CID_BOOKMARK_TOGGLE
+		</a>
+		<div class="expara" id="p556" style="DISPLAY: none">
+			<p>This command will clear the bookmark on the current line if it is set and set the 
+				bookmark if it is cleared.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p557, a557 )" href="#nop"><img src="closed.gif" id="a557" border="0">CID_BOOKMARK_GOTONEXT
+		</a>
+		<div class="expara" id="p557" style="DISPLAY: none">
+			<p>This command will place the caret on the next line which has a bookmark set. When 
+				there is no next line with a bookmark the text is searched from the first line 
+				down again.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p558, a558 )" href="#nop"><img src="closed.gif" id="a558" border="0">CID_BOOKMARK_GOTOPREV
+		</a>
+		<div class="expara" id="p558" style="DISPLAY: none">
+			<p>This command will place the caret on the previous line which has a bookmark set. 
+				When there is no previous line with a bookmark the text is searched from the 
+				last line up again.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p559, a559 )" href="#nop"><img src="closed.gif" id="a559" border="0">CID_BOOKMARK_GOTOFIRST
+		</a>
+		<div class="expara" id="p559" style="DISPLAY: none">
+			<p>This command will place the caret on the first line in the text which has a bookmark 
+				set.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p560, a560 )" href="#nop"><img src="closed.gif" id="a560" border="0">CID_BOOKMARK_GOTOLAST
+		</a>
+		<div class="expara" id="p560" style="DISPLAY: none">
+			<p>This command will place the caret on the last line in the text which has a bookmark 
+				set.</p>
+		</div>
+		<p><strong>Find commands:</strong></p>
+		<br>
+		<a onclick="doExpand( p661, a661 )" href="#nop"><img src="closed.gif" id="a661" border="0">CID_FIND_NEXTWORD
+		</a>
+		<div class="expara" id="p661" style="DISPLAY: none">
+			<p>This command will find the next occurence of the word under the caret. When the next 
+				occurence is found it is selected.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p662, a662 )" href="#nop"><img src="closed.gif" id="a662" border="0">CID_FIND_PREVWORD
+		</a>
+		<div class="expara" id="p662" style="DISPLAY: none">
+			<p>This command will find the previous occurence of the word under the caret. When the 
+				previous occurence is found it is selected.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p663, a663 )" href="#nop"><img src="closed.gif" id="a663" border="0">CID_FIND_NEXT
+		</a>
+		<div class="expara" id="p663" style="DISPLAY: none">
+			<p>This command will find the next occurence of the current search pattern. When the 
+				search pattern is found it is selected.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p664, a664 )" href="#nop"><img src="closed.gif" id="a664" border="0">CID_FIND_PREV
+		</a>
+		<div class="expara" id="p664" style="DISPLAY: none">
+			<p>This command will find the previous occurence of the current search pattern. When 
+				the search pattern is found it is selected.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p665, a665 )" href="#nop"><img src="closed.gif" id="a665" border="0">CID_FIND_MATCHBRACKET
+		</a>
+		<div class="expara" id="p665" style="DISPLAY: none">
+			<p>This command will find the matching closing bracket if the caret is located on a 
+				opening bracket or the other way around.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p666, a666 )" href="#nop"><img src="closed.gif" id="a666" border="0">CID_FIND_MATCHBRACKET_SELECT
+		</a>
+		<div class="expara" id="p666" style="DISPLAY: none">
+			<p>This command will find the matching closing bracket if the caret is located on a 
+				opening bracket or the other way around. In addition the text from the opening 
+				bracket upto, and including, the closing bracket is selected.</p>
+		</div>
+		<p><strong>Dialog commands:</strong></p>
+		<br>
+		<a onclick="doExpand( p766, a766 )" href="#nop"><img src="closed.gif" id="a766" border="0">CID_DIALOG_GOTO
+		</a>
+		<div class="expara" id="p766" style="DISPLAY: none">
+			<p>This command will show the <a href="goto.htm">goto</a> dialog.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p767, a767 )" href="#nop"><img src="closed.gif" id="a767" border="0">CID_DIALOG_FIND
+		</a>
+		<div class="expara" id="p767" style="DISPLAY: none">
+			<p>This command will show the <a href="find.htm">find</a> dialog.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p768, a768 )" href="#nop"><img src="closed.gif" id="a768" border="0">CID_DIALOG_REPLACE
+		</a>
+		<div class="expara" id="p768" style="DISPLAY: none">
+			<p>This command will show the <a href="replace.htm">replace</a> dialog.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p769, a769 )" href="#nop"><img src="closed.gif" id="a769" border="0">CID_DIALOG_PROPERTIES
+		</a>
+		<div class="expara" id="p769" style="DISPLAY: none">
+			<p>This command will show the <a href="properties.htm">properties</a> dialog.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p770, a770 )" href="#nop"><img src="closed.gif" id="a770" border="0">CID_DIALOG_ABOUTCONTROL
+		</a>
+		<div class="expara" id="p770" style="DISPLAY: none">
+			<p>This command will show the About dialog.</p>
+		</div>
+		<p><strong>File commands:</strong></p>
+		<br>
+		<a onclick="doExpand( p873, a873 )" href="#nop"><img src="closed.gif" id="a873" border="0">CID_FILE_SAVE
+		</a>
+		<div class="expara" id="p873" style="DISPLAY: none">
+			<p>This command will save the control contents using it's current name</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p874, a874 )" href="#nop"><img src="closed.gif" id="a874" border="0">CID_FILE_DELETECONTENTS
+		</a>
+		<div class="expara" id="p874" style="DISPLAY: none">
+			<p>This command will delete the control contents. When the control contents is modified 
+				the user will be opted to save the control contents first.</p>
+		</div>
+		<br>
+		<a onclick="doExpand( p875, a875 )" href="#nop"><img src="closed.gif" id="a875" border="0">CID_FILE_PRINT
+		</a>
+		<div class="expara" id="p875" style="DISPLAY: none">
+			<p>This command will open the printer properties dialog which the user can use to setup 
+				what he/she wants to print. When the user confirms the dialog printing will 
+				begin.</p>
+		</div>
+	</body>
+</html>

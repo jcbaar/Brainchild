@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<title>BCM_SETFILENAME</title>
+	</head>
+	<body bgcolor="#ffffff">
+		<p><font color="#000000" size="4"><strong>BCM_SETCOLOR</strong></font></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%">
+			<tr>
+				<td width="100%" bgcolor="#e6e6e6"><pre>BCM_SETCOLOR
+	wParam = ( WPARAM )( int )nColorIndex; 
+	lParam = ( LPARAM )( COLORREF )crColor;</pre>
+				</td>
+			</tr>
+		</table>
+		<p>Changes the&nbsp;RGB value&nbsp;of the specified color.</p>
+		<ul type="disc">
+			<li>
+				Returns the previous COLORREF value of the specified color or CLR_NONE uppon an 
+				error.</li>
+		</ul>
+		<DL>
+			<dt><em>nColorIndex</em>&nbsp;
+				<DD>
+					The index of the color to change. This must be any of the following values.<BR>
+					<BR>
+					<UL type="disc">
+						<li>
+						BCC_TEXT
+						<li>
+						BCC_BACKGROUND
+						<li>
+						BCC_BACKGROUND_READONLY
+						<li>
+						BCC_SELECTION_MARGIN
+						<li>
+						BCC_BOOKMARK
+						<li>
+						BCC_NUMBER
+						<li>
+						BCC_DELIMITER
+						<li>
+						BCC_SELECTED_TEXT
+						<li>
+						BCC_SELECTED_BKGND
+						<LI>
+						BCC_LINE_NUMBERS
+						<LI>
+						BCC_BACKGROUND_LINE_NUMBERS
+						<LI>
+						BCC_BACKGROUND_NUMBER
+						<LI>
+						BCC_BACKGROUND_DELIMITER
+						<LI>
+						BCC_BRACKET_MATCH
+						<LI>
+						BCC_LINE_HIGHLIGHT
+						<LI>
+						BCC_HYPERLINK
+						<LI>
+						BCC_BACKGROUND_HYPERLINK
+						<LI>
+						BCC_MARKER_1
+						<LI>
+						BCC_MARKER_2
+						<LI>
+						BCC_MARKER_3
+						<LI>
+						BCC_MARKER_4
+						<LI>
+						BCC_MARKER_5
+						<LI>
+						BCC_MARKER_FG_1
+						<LI>
+						BCC_MARKER_FG_2
+						<LI>
+						BCC_MARKER_FG_3
+						<LI>
+						BCC_MARKER_FG_4
+						<LI>
+							BCC_MARKER_FG_5
+						</LI>
+					</UL>
+					<DD>
+						<BR>
+						A value of CLR_DEFAULT will set the default color for the selected color index. <DT><EM></EM>
+							<DT><EM>crColor</EM>
+								<DD>
+									The COLORREF value to set in the specific color index. <DT><STRONG></STRONG><DT><STRONG>Note:</STRONG>
+											<DD>
+												With this function you change the specific color for <STRONG>all</STRONG> Brainchild 
+												controls which have been created by the calling thread.</DD></DL>
+	</body>
+</html>

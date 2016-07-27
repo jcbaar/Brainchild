@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Syntax Coloring Page</title>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</head>
+	<body>
+		<p><IMG alt="" src="SyntaxCol.jpg"></p>
+		<p>This is the Syntax Coloring page of the Brainchild configuration program. With it 
+			you can change several syntax coloring settings and options of the Brainchild 
+			control. The various settings are explaned below:</p>
+		<table cellSpacing="0" cellPadding="2" width="100%" border="1">
+			<TR>
+				<TD width="35%">Enable syntax coloring</TD>
+				<TD width="65%">This option allows you to turn on or off the syntax coloring for this 
+					text class. For the syntax coloring to work the syntax coloring option on the <A href="general.htm">
+						general page</A> must be turned on.</TD>
+			</TR>
+			<tr>
+				<td width="35%">Blocks</td>
+				<td width="65%">These controls allow you to add and or edit text block. You see a 
+					toolbar with four buttons, <IMG alt="" src="NewTB.gif">, <IMG alt="" src="DelTB.gif">,&nbsp;<IMG alt="" src="UpTB.gif">
+					and <IMG alt="" src="DownTB.gif">.&nbsp;
+					<p>&nbsp;<IMG alt="" src="NewTB.gif">adds a new block,&nbsp;<IMG alt="" src="DelTB.gif">
+						removes the selected block. With the&nbsp;<IMG alt="" src="UpTB.gif"> and&nbsp;<IMG alt="" src="DownTB.gif">
+						buttons you can change the position of the blocks in the list.</p>
+					<p>To edit the entries in the block list you simply double-click the desired entry. 
+						This will open the&nbsp;<A href="block_edit.htm">block editor dialog</A> which 
+						allows you to edit the selected entry.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="35%">Escape character</td>
+				<td width="65%">Here you can type the character which escapes a block terminator. This 
+					means that the block will continue after the block terminator is seen. For 
+					example a string in C:
+					<p>"This is a \"string\""</p>
+					<p>When you set the escape character to \ the second and third double quote will not be 
+						seen as the block terminator since they are preceeded by the escape character.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="35%">Common&nbsp;colors</td>
+				<td width="65%">This lists the general colors which can be changed. When you select one 
+					of the entries the color button, <IMG alt="" src="ColorTB.gif">, on the toolbar 
+					is enabled and you can click it to <A href="ColorSel.htm">edit the color</A> for 
+					the selected entry.
+				</td>
+			</tr>
+			<tr>
+				<td width="35%">Font</td>
+				<td width="65%">When you click on this button the system font dialog is opened for you 
+					to select the font used by this text class. You can only select fixed width 
+					fonts.</td>
+			</tr>
+			<tr>
+				<td width="35%">Keywords</td>
+				<td width="65%">When you click on this button the <a href="keywords_edit.htm">keyword editor 
+						dialog</a> is opened in which you can edit the keyword groups for this 
+					text class.
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

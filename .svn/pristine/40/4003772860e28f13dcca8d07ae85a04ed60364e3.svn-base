@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>NMCARETPOSITION</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body bgcolor="#ffffff">
+		<p><FONT color="#000000" size="4"><STRONG>NMMARGINCLICK</STRONG></FONT></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%">
+			<tr>
+				<td width="100%" bgcolor="#e6e6e6"><pre>typedef struct tagNMMARGINCLICK
+{
+	NMHDR	hdr;
+	int 	nLine; <BR>	int 	nMargin; <BR>	int 	nButton; <BR>	DWORD 	dwButtonState; <BR>	BOOL 	bDoDefault; <BR>
+} NMMARKERSTATE, FAR *LPNMMARKERSTATE;
+</pre>
+				</td>
+			</tr>
+		</table>
+		<p>Contains information about <a href="nmmarginclick.htm">NMBC_MARGINCLICK</a> notification 
+			message.</p>
+		<DL>
+			<dt><em>hdr</em>
+				<dd>
+					<strong>NMHDR</strong> structure containing information about this notification 
+					message. <DT><EM>nLine </EM>
+						<DD>
+							The line number on which the marker state is changing/has changed. The line 
+							number is 1 based. <DT><EM>nMargin</EM>&nbsp;
+								<dd>
+									The margin in which the click was made. Can contain the following values:<BR>
+									<BR>
+									MCT_SELECTION&nbsp; - the selection margin.<BR>
+									MCT_LINENUMBERS - the line number margin <DT><EM>nButton</EM>&nbsp;
+										<DD>
+											The mouse button which triggered this notification. This can contain any of the 
+											following values:<BR>
+											MK_LBUTTON - The left mouse button.
+											<BR>
+											MK_MBUTTON - The middle mouse button.<BR>
+											MK_RBUTTON - The right mouse button.<BR>
+											<DT><em>dwButtonState</em></DT>
+											<DD>
+												Indicates whether various virtual keys are down during the click. This 
+												parameter can be any combination of the following values:
+												<BR>
+												<BR>
+												MK_CONTROL&nbsp;<STRONG>-</STRONG>&nbsp;&nbsp;Set if the CTRL key is down.
+												<BR>
+												MK_LBUTTON&nbsp;&nbsp;<STRONG>-</STRONG>&nbsp;Set if the left mouse button is 
+												down.
+												<BR>
+												MK_MBUTTON <STRONG>-</STRONG>&nbsp;Set if the middle mouse button is down.
+												<BR>
+												MK_RBUTTON<STRONG> -</STRONG>&nbsp;Set if the right mouse button is down.
+												<BR>
+												MK_SHIFT -&nbsp;Set if the SHIFT key is down.<EM> </EM>
+											</DD>
+											<DT><EM>bDoDefault</EM>
+												<DD>
+													By default this is set to TRUE. The control will check this value uppon return 
+													of the notification to see if&nbsp;it needs to perform the default action 
+													normally assigned to the click in the margin. If you set this to FALSE before 
+													returning the control will not perform the default action.</DD></DL>
+	</body>
+</html>

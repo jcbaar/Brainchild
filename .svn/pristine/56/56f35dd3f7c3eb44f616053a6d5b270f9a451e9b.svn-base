@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>CreateCList</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body bgcolor="#ffffff">
+		<p><font color="#000000" size="4"><strong>CreateCList</strong></font></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%">
+			<tr>
+				<td width="100%" bgcolor="#e6e6e6"><pre>LPCOMLIST CreateCList(
+	DWORD dwCommType,
+	...
+);</pre>
+				</td>
+			</tr>
+		</table>
+		<p>Creates a command list for usage with the <a href="executeclist.htm">BCM_EXECUTECLIST</a>
+			message.</p>
+		<ul type="disc">
+			<li>
+				Returns a pointer to the command list, or NULL for failure.</li>
+		</ul>
+		<dl>
+			<dt><em>dwCommType</em>
+				<dd>
+					A command type identifier. This may contain any of the following values:
+					<dd>
+						<ul type="disc">
+							<li>
+								CTYPE_HARDCODED<br>
+								This command type executed a hardcoded function. A hardcoded function means a 
+								function which has been built into the brainchild code itself. The data for 
+								this command may be any of the command identifiers described in the <a href="commands.htm">
+									hardcoded commands</a>
+							section.
+							<li>
+								CTYPE_TEXT<br>
+								This command will insert text at the current caret position. The data for this 
+								command must be a 0-terminated string of characters to be inserted. Line breaks 
+								in the inserted text are represented by the <strong>\n</strong>
+							character sequence.
+							<li>
+								CTYPE_RUN<br>
+							This command will execute a program or batch file. The data for this command 
+							must be a 0-terminated string representing the full path name of the executable 
+							or batchfile to run including any desired parameters.
+							<li>
+								CTYPE_SHELLOPEN<br>
+								This command will use the <strong>ShellExecute</strong>
+							function to open the document. The data for this command must be a 0-terminated 
+							string containing the name of the document to open.
+							<li>
+								CTYPE_END<br>
+								This command terminates the argument list. You <strong>must</strong> terminate 
+								your arguments with this command type in order for the function to know where 
+								to stop looking for commands. It does not require any data.</li>
+						</ul>
+					</dd>
+		</dl>
+		<p>The command type identifier must be followed by the type-specific data followed 
+			again by a new command type identifier followed by it's data etc.</p>
+		<p><strong>Sample</strong></p>
+		<table border="0" cellpadding="0" cellspacing="3" width="100%" bgcolor="#e6e6e6" bordercolor="#ffffff" bordercolordark="#ffffff" bordercolorlight="#ffffff">
+			<tr>
+				<td><pre>/*
+ *	CreateCommandLists -
+ *		Create a few command lists.
+ */
+LPCOMLIST	lpcDateTime, lpcCalc, lpcMail;
+
+BOOL CreateCommandLists( void )
+{
+	BOOL	bRC = FALSE;
+
+	/*
+	 *	Create a command list which will:
+	 *		1) Insert the date.
+	 *		2) Insert the ", " character sequence.
+	 *	        3) Insert the time.
+	 */
+	if (( lpcDateTime = CreateCList( CTYPE_HARCODED, CID_EDIT_INSERTDATE,
+				         CTYPE_TEXT, ", ",
+				         CTYPE_HARDCODED, CID_EDIT_INSERTTIME,
+				         CTYPE_END )) == NULL )
+		return FALSE;
+
+	/*
+	 *	Create a command list which will
+	 *	run the windows calculator.
+	 */
+	if (( lpcCalc = CreateCList( CTYPE_RUN, "Calc.exe", CTYPE_END )) == NULL )
+	{
+		DeleteCList( lpcDateTime );
+		return FALSE;
+	}
+
+	/*
+	 *	Create a command list which will
+	 *	open your browser on the CodeProject<BR>	 * 	Web site.<BR>	 */
+	if ( lpcMail = CreateCList( CTYPE_SHELLOPEN, "http://www.codeproject.com", CTYPE_END )) == NULL )
+	{
+		DeleteCList( lpcDateTime );
+		DeleteCList( lpcCalc );
+		return FALSE;
+	}
+	return TRUE;
+}</pre>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
