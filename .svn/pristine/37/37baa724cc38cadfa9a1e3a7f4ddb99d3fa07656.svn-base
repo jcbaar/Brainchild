@@ -1,9 +1,0 @@
-
-- Add 
-	BCM_SETFINDTEXT			- Including flags, case, selection etc.
-	BCM_SETREPLACETEXT	
-
-	CID_REPLACE_NEXT
-	CID_REPLACE_PREV
-	CID_REPLACE_ALL
-
